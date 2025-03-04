@@ -24,7 +24,9 @@ function jugar() {
     
     intentos--;
     document.getElementById("resultado").innerText = mensaje;
-    document.getElementById("intentos").innerText = `Intentos restantes: ${intentos}`;
+    if(!intentos < 0){
+            document.getElementById("intentos").innerText = `Intentos restantes: ${intentos}`;
+    }
     
     if (intentos <= 0) {
         document.getElementById("final").innerText = energiaRestaurada 
