@@ -18,13 +18,16 @@ function jugar() {
         intentos = 0;
     } else if (resultadoDado >= 8) {
         mensaje += "Tu acción ayuda un poco, pero la energía solo se restablece parcialmente.";
+    } else if(resultadoDado === 1){
+        mensaje += "Tu acción falla y la situación empeora mucho.";
+        intentos--;
     } else {
         mensaje += "Tu acción falla y la situación empeora.";
     }
     
     intentos--;
     document.getElementById("resultado").innerText = mensaje;
-    if(!intentos < 0){
+    if(intentos >= 0){
             document.getElementById("intentos").innerText = `Intentos restantes: ${intentos}`;
     }
     
